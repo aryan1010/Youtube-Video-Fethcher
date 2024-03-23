@@ -7,19 +7,26 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Video',
+            name="Video",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('video_id', models.CharField(max_length=20, unique=True)),
-                ('title', models.CharField(max_length=500)),
-                ('description', models.TextField()),
-                ('published_at', models.DateTimeField()),
-                ('thumbnails', models.JSONField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("video_id", models.CharField(max_length=20, unique=True)),
+                ("title", models.CharField(max_length=500)),
+                ("description", models.TextField()),
+                ("published_at", models.DateTimeField()),
+                ("thumbnails", models.JSONField()),
             ],
         ),
     ]

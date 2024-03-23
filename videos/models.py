@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Video(models.Model):
     video_id = models.CharField(max_length=20, unique=True)
     title = models.CharField(max_length=500)
@@ -9,6 +10,7 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class APIKey(models.Model):
     key = models.CharField(max_length=100, unique=True)
