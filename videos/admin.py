@@ -5,6 +5,9 @@ from .models import Video, APIKey
 
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
+    """
+    For displaying the Video model in the Django admin,through filtering sorting and searching.[Dashboard]
+    """
     list_display = ("title", "description", "published_at")
     list_filter = ("published_at",)
     search_fields = ("title", "description")

@@ -7,6 +7,15 @@ YOUTUBE_API_VERSION = "v3"
 
 
 def get_youtube_client():
+    """
+    Get a YouTube API client object using the available API keys.
+
+    Returns:
+        A YouTube API client object.
+
+    Raises:
+        Exception: If no active API keys are found.
+    """
     active_keys = APIKey.objects.filter(is_active=True)
     for key in active_keys:
         try:
@@ -27,7 +36,18 @@ def get_youtube_client():
 from datetime import datetime, timedelta
 
 
-def search_videos(client, query, max_results=50):
+def search_videos(client, query, max_results):
+    """
+    Search for videos on YouTube based on the given query.
+
+    Args:
+        client  A YouTube API client object.
+        query (str): The search query for finding videos.
+        max_results (int): The maximum number of results to return. 
+
+    Returns:
+        list: A list of dictionaries containing video data.
+    """
     # Get the datetime for 24 hours ago
     published_after = datetime.utcnow() - timedelta(hours=1)
     published_after = published_after.isoformat() + "Z"
