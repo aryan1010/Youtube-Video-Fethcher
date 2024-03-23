@@ -6,7 +6,12 @@ SEARCH_QUERY = 'Cricket'
 
 @shared_task
 def fetch_latest_videos():
-    youtube_client = get_youtube_client()
+    try:
+        youtube_client = get_youtube_client()
+    except Exception as e:
+        print(f"Error fetching videos: {e}")
+        return
+
     videos = search_videos(youtube_client, SEARCH_QUERY)
 
     for video in videos:

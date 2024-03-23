@@ -9,3 +9,10 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
+
+class APIKey(models.Model):
+    key = models.CharField(max_length=100, unique=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.key
