@@ -8,6 +8,7 @@
 
 ## Assignment received  23rd, 2 pm , Submitted in 14 hours
 ## Please provide feedback 😀
+## Tech Stack Pick based on : https://blog.famapp.in/blog/the-story-behind-fampays-tech-stack/
 # Installation:
 
 Install Python and Redis from here https://github.com/tporadowski/redis/releases 
